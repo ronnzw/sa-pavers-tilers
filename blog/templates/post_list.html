@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Pavers-tiles</title>
+
+    {% load staticfiles %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static '/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <style>
+    /* [1] The container */
+.img-hover-zoom {
+  height: 100%; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.5);
+  border-color: orange;
+}	
+    </style>
+</head>
+<body>
+
+
+	<div class="container-fluid" style="height: 80px; background-image: linear-gradient(135deg, black 70%, #FF6347 30%);">
+		<br>
+		<div class="row">
+			<div class="col-md-4">
+				<span class="fa fa-phone" style="color: white;">&nbsp +27 11 037 0329</span>
+			</div>
+			<div class="col-md-4">
+				<span class="fa fa-envelope-o" style="color: orange;">&nbsp&nbsp info@pavers-tilers.co.za</span>
+			</div>
+			<div class="col-md-4" style="color: orange;">
+				<span>Beyond pavering and tiling</span></div>
+						
+		</div>	
+	</div>
+
+<div class="container">
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
+  <a class="my-0 mr-md-auto font-weight-normal" href="#"><img alt="Brand" style=" width: 100px; height: 75px" src="/static/img/paverlogo.png"></a>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="/">Home</a>
+    <a class="p-2 text-dark" href="/about">About</a>
+    <a class="p-2 text-dark" href="service">Services</a>
+    <a class="p-2 text-dark" href="contact/">Contact</a>
+    <a class="p-2 text-dark" href="blog/">Blog</a>
+  </nav>
+</div>
+</div>
+
+
+
+{% block content %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+<footer>
+
+<div class="jumbotron" style="background-color: black;">
+  <div class="row">
+	  <div class="col-xs-6 col-sm-3">
+	  	<h2 style="color: white;">NEWSLETTER:</h2>
+			<form class="form-horizontal">
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+			    <div class="col-sm-10">
+			      <input type="name" class="form-control" id="inputEmail3" placeholder="First name">
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 control-label"></label>
+			    <div class="col-sm-10">
+			      <input type="Surname" class="form-control" id="inputPassword3" placeholder="Email">
+			    </div>
+			  </div>
+			</form>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn" style="background-color: #FF4500;">Subscribe</button>
+		    </div>
+		</div>				  	
+	  </div>
+	  <div class="col-xs-6 col-sm-3">
+	  	<h2 style="color: white;">OFFICE TIME</h2>
+	  	<ul><h5 style="color: #FF4500;">Mon-Fri:9.00am – 5.00pm<h5>
+
+<h5 style="color: #FF4500;">Sat:<h5>
+
+<h5 style="color: #FF4500;">10.00am – 1.00pm<h5>
+
+<h5 style="color: #FF4500;">Sun –Closed <h5>
+
+<h5></h5></ul>
+	  </div>
+	  <div class="col-xs-6 col-sm-3">
+	  	<h2 style="color: white;">QUICK LINKS</h2>
+	  	
+	  		<ul><a href="#" style="color: #FF4500;">Home</a></ul>
+	  		<ul><a href="#" style="color: #FF4500;">About</a></ul>
+	  		<ul><a href="#" style="color: #FF4500;">Services</a></ul>
+	  		<ul><a href="#" style="color: #FF4500;">Contacts</a></ul>
+	  		<ul><a href="#" style="color: #FF4500;">Blog</a></ul>
+	  	
+	  </div>
+	  <div class="col-xs-6 col-sm-3">
+	  	<h2 style="color: white;">CONTACT US: </h2>
+	  	
+	  		<ul><i class="fa fa-phone" style="color: #FF4500;">&nbsp +27 11 037 0329</i></ul>
+	  		<ul><i style="color: #FF4500;">&nbsp +27 81 530 4931</i></ul>
+	  		<ul><i class="fa fa-envelope-o text-orange" style="color: #FF4500;">&nbsp info@pavers-tilers.co.za</i></ul>
+	  		<ul><i class="fa fa-map-marker" style="color: #FF4500;">&nbsp 45 3rd Halfway Gardens Midrand</i></ul>
+
+	  	
+	  </div>
+</div>
+</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-4"><a href="index.html"  style=" font-family: arial,helvetica,sans-serif; font-size: 12px; color: rgb(72, 61, 139);">Designed and Developed by: <a href="#">IAG software developers</a>. All Rights Reserved.</a>
+			</div>
+
+			<div class="col-xs-6 col-sm-4">
+			<p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12px;"><em><span style="color: #ff0000;">Proudly a division of the Intellect Africa Group (Pty) Ltd </span></em></span></p>
+			</div>
+			
+				<div class="col-xs-6 col-sm-4 text-center" style="font-size: 30px">
+					<span class="fa fa-facebook-square" style="color: blue;">
+						<a href="https://www.facebook.com/SA-Pavers-and-Tilers-1643209059157043/" title="Facebook" target="_blank"></a>
+					</span>
+
+					<span class="fa fa-google-plus-square" style="color: red;">
+						<a href="https://plus.google.com/u/1/discover" title="Google +" target="_blank"></a>
+					</span>
+
+					<span class="fa fa-twitter-square"style="color: #1E90FF;">
+						<a href="https://twitter.com/PaversSa" title="Twitter" target="_blank"></a>
+					</span>
+
+					<span class="fa fa-youtube-square" style="color: red;">
+						<a href="https://www.youtube.com/channel/UC2h68vf9zIyvk4HsAXSnpRA?view_as=subscriber" title="YouTube" target="_blank"></a>
+					</span>
+
+					<span class="fa fa-rss-square" style="color: orange;">
+						<a href="https://www.afrihost.com//blog/feed" title="RSS" target="_blank"></a>
+					</span>
+				</div>
+
+		</div>
+	</div>
+</footer>
+</body>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</html>
