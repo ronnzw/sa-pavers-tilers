@@ -41,7 +41,7 @@ class FreeQuote(models.Model):
 
     name = models.CharField(max_length=200)
     surname = models.CharField(max_length=200)
-    emai = models.EmailField(max_length=200)
+    email = models.EmailField(max_length=200)
     cell_number = models.IntegerField()
     address = models.CharField(max_length=200)
     service_req = models.CharField(max_length=4, choices=serviceAvailable )
@@ -49,7 +49,7 @@ class FreeQuote(models.Model):
     loc_from = models.CharField(max_length=200)
      
     def __str__(self):
-        return self.name | self.service_req   
+        return self.name   
 
 
 class Contact(models.Model):
