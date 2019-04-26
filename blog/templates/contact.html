@@ -1,5 +1,7 @@
 {% extends 'post_list.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 <div class="container-fluid" style="background: black;">
@@ -30,7 +32,26 @@
     </div> 
 
     <div class="col-md-6">
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: red;">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
       <h4>Write Your Message</h4>
+
+        <form method="POST" class="post-form">{% csrf_token %}
+              {{ form|crispy }}
+        <button type="submit" class="btn btn-primary"> Submit </button>
+        </form>
+
+
+
+
+
+         <!-- Bootstrap core CSS
         <div class="form-group">
           <label for="inputEmail3" class="col-sm-2 control-label"></label>
           <div class="col-sm-10">
@@ -69,6 +90,8 @@
               <button type="submit" class="btn btn-primary" style="background-color: #003366;">Submit</button>
             </div>
           </div>
+
+            -->
     </div>
 
   </div> 

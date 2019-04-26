@@ -1,5 +1,7 @@
 {% extends 'post_list.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 
@@ -16,7 +18,7 @@
 		  <p style="color: white">beyond paving and tiling</p>
 
 		  <p>
-		  	<a class="btn btn-lg" href="#" role="button" style="color: #003366; background-color: white">Get Services</a>&nbsp&nbsp&nbsp<a class="btn btn-lg" href="#" role="button" style="color: white; background-color: #003366; ">Contact now</a>
+		  	<a class="btn btn-lg" href="service" role="button" style="color: #003366; background-color: white">Get Services</a>&nbsp&nbsp&nbsp<a class="btn btn-lg" href="contact" role="button" style="color: white; background-color: #003366; ">Contact now</a>
 		  </p>
 	</div>
 
@@ -48,8 +50,9 @@
               <ul><h6>Walk ways</h6></ul>
   			  <ul>
                 <div class="btn-group">
+                	<a href="blog">
                   <button type="button" class="btn btn-md btn-outline-secondary" style="background-color: #003366; color: white;">Read more
-                  </button>
+                  </button></a>
                 </div>
               </ul>
             </div>
@@ -74,8 +77,9 @@
               <ul><br></ul>
 			  <ul>
                 <div class="btn-group">
+                	<a href="blog">
                   <button type="button" class="btn btn-md btn-outline-secondary" style="background-color: #003366; color: white;">Read more
-                  </button>
+                  </button></a>
                 </div>
               </ul>
              </div>
@@ -144,72 +148,19 @@ We choose the best suppliers, who have tiles and pavers that meet the quality as
 		</div>
 	</div>
 	<div class="col-md-6">
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: red;">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 
-		<div>
-			<form class="form-horizontal">
-				  <div class="form-group">
-				    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-				    <div class="col-sm-10">
-				      <input type="name" class="form-control" id="inputEmail3" placeholder="First name">
-				    </div>
-				  </div>
+<form method="POST" class="post-form">{% csrf_token %}
+      {{ form|crispy }}
+<button type="submit" class="save btn btn-primary"> Submit </button>
+</form>		
 
-				  <div class="form-group">
-				    <label for="inputPassword3" class="col-sm-2 control-label"></label>
-				    <div class="col-sm-10">
-				      <input type="Surname" class="form-control" id="inputPassword3" placeholder="Surname">
-				    </div>
-				  </div>
-
-				  <div class="form-group">
-				    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-				    <div class="col-sm-10">
-				      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-				    </div>
-				  </div>
-
-				  <div class="form-group">
-				    <label for="inputPassword3" class="col-sm-2 control-label"></label>
-				    <div class="col-sm-10">
-				      <input type="Cell number" class="form-control" id="inputPassword3" placeholder="Cell number">
-				    </div>
-				  </div>
-
-				  <div class="form-group">
-				    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-				    <div class="col-sm-10">
-				      <input type="address" class="form-control" id="inputEmail3" placeholder="Home address">
-				    </div>
-				  </div>
-
-				  <div class="form-group">
-				    <label for="inputPassword3" class="col-sm-2 control-label"></label>
-				    <div class="col-sm-10">
-				      <input type="username" class="form-control" id="inputPassword3" placeholder="Service required ">
-				    </div>
-				  </div>
-
-				  <div class="form-group">
-				    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-				    <div class="col-sm-10">
-				      <input type="name" class="form-control" id="inputEmail3" placeholder="Additional Information">
-				    </div>
-				  </div>
-
-				  <div class="form-group">
-				    <label for="inputPassword3" class="col-sm-2 control-label"></label>
-				    <div class="col-sm-10">
-				      <input type="name" class="form-control" id="inputPassword3" placeholder="where do you know us from?">
-				    </div>
-				  </div>
-
-				  <div class="form-group">
-				    <div class="col-sm-offset-2 col-sm-10">
-				      <button type="submit" class="btn btn-primary" style="background-color: #003366;">Submit</button>
-				    </div>
-				  </div>
-			</form>
-		</div>
 	</div>
 </div>
 
