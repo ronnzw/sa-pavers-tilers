@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 
+
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -17,5 +18,48 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+
+class Newletter(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=50)
+
+    def __str__(self):
+        return self.name | self.email
+
+
+class FreeQuote(models.Model):
+    """docstring for FreeQuote"""
+    serviceAvailable = (
+        ('nw', 'New Pavement Installation'), 
+        ('cp', 'Cleaning pavements'), 
+        ('pm', 'Pavement Maintenance'),
+        ('tc', 'Tiles cleaning'),
+        ('tm', 'Tiles Maintenance'),
+        ('nt', 'New Tiles Installation'),
+        ('oe', 'Other services'),
+    )
+
+    first_name = models.CharField(max_length=200)
+    surname = models.CharField(max_length=200)
+    emai = models.EmailField(max_length=200)
+    cell_number = models.IntegerField()
+    address = models.CharField(max_length=200)
+    service_req = models.CharField(max_length=4, choices=serviceAvailable )
+    additional_info = models.TextField()
+    loc_from = models.CharField(max_length=200)
+     
+    def __str__(self):
+        return self.name | self.service_req   
+
+
+class Contact(models.Model):
+   name = models.CharField(max_length=200)
+   emai = models.EmailField(max_length=200)
+   phone = models.CharField(max_length=15)
+   subject = models.CharField(max_length=200)
+   message = models.TextField()
+
+   def __str__(self):
+        return self.name | self.message
 # Create your models here.
 
