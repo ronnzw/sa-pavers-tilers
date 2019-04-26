@@ -39,7 +39,7 @@ class FreeQuote(models.Model):
         ('oe', 'Other services'),
     )
 
-    first_name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
     surname = models.CharField(max_length=200)
     emai = models.EmailField(max_length=200)
     cell_number = models.IntegerField()
