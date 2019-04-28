@@ -7,7 +7,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 class FreeQuoteAdmin(admin.ModelAdmin):
-	list_display = ('name', 'surname', 'email', 'cell_number', 'address', 'service_req', 'additional_info', 'location')
+	list_display = ('name', 'surname', 'email', 'cell_number', 'address', 'service_required', 'additional_info', 'location')
 
 admin.site.register(Post)
 admin.site.register(Newletter)

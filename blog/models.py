@@ -44,7 +44,7 @@ class FreeQuote(models.Model):
     email = models.EmailField(max_length=200)
     cell_number = models.IntegerField(blank=True)
     address = models.CharField(max_length=200, blank=True)
-    service_req = models.CharField(max_length=4, choices=serviceAvailable )
+    service_required = models.CharField(max_length=4, choices=serviceAvailable )
     additional_info = models.TextField(blank=True)
     location = models.CharField(max_length=200)
      
