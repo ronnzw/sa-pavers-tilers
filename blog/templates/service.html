@@ -1,5 +1,7 @@
 {% extends 'post_list.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 <div class="container-fluid" style="background: black;">
@@ -34,7 +36,7 @@
       <div class="col-xs-6 col-md-4" style="background-color: grey">
           <div class="card mb-6 shadow-sm">
             <div class="img-hover-zoom">
-            <img src="/static/img/Tiling.jpg" alt="photo" class="img-thumbnail" style="height: 362px"/>
+            <img src="/static/img/cf.jpg" alt="photo" class="img-thumbnail" style="height: 362px"/>
             </div>
             <div class="card-body">
              <div style="text-align: justify;">
@@ -71,7 +73,7 @@
       <div class="col-xs-6 col-md-4">
           <div class="card mb-6 shadow-sm" style="text-shadow: green">
            <div class="img-hover-zoom">
-           <img src="/static/img/Pavements.jpg" alt="photo" class="img-thumbnail" style="height: 362px"/>
+           <img src="/static/img/dp.jpg" alt="photo" class="img-thumbnail" style="height: 362px"/>
            </div>
             <div class="card-body">
             <div style="text-align: justify;">
@@ -108,70 +110,18 @@
 
 
       <div class="col-xs-6 col-md-4" style="background-color: grey">
-        <div>
-          <form class="form-horizontal">
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                  <input type="name" class="form-control" id="inputEmail3" placeholder="First name (Required)">
-                </div>
-              </div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: red;">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                  <input type="Surname" class="form-control" id="inputPassword3" placeholder="Surname (Required)">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email (Required)">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                  <input type="Cell number" class="form-control" id="inputPassword3" placeholder="Cell number">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                  <input type="address" class="form-control" id="inputEmail3" placeholder="Home address">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                  <input type="username" class="form-control" id="inputPassword3" placeholder="Service required (Required)">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                  <input type="name" class="form-control" id="inputEmail3" placeholder="Additional Information">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                  <input type="name" class="form-control" id="inputPassword3" placeholder="where do you know us from?">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary" style="background-color: #003366;">Submit</button>
-                </div>
-              </div>
-          </form>
+<form method="POST" class="post-form">{% csrf_token %}
+      {{ form|crispy }}
+<button type="submit" class="save btn btn-primary" style="background-color: #003366; color: white;"> Submit </button>
+</form> 
         </div> 
 <br><br>
 
