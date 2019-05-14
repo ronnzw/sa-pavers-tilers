@@ -25,7 +25,7 @@ SECRET_KEY = 'an_wl2=gmlqp31ar&(o%(u+tlmftd5d8h=h*o6j92i$j4lyp8&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'sapavers.pythonanywhere.com', 'pavers-tilers.co.za',]
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'sapavers.pythonanywhere.com', 'sapaverstilers.co.za',]
 
 
 # Application definition
